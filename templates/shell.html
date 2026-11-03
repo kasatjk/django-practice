@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}System Core{% endblock %}</title>
+    
+    <!-- Modern sans-serif stack -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="layout-wrapper">
+        <header class="top-nav">
+            <nav class="nav-links">
+                <a href="{% url 'page1' %}" class="nav-item">Сторінка 1 - Поточний час</a>
+                <a href="{% url 'page2' %}" class="nav-item">Сторінка 2 - Дата</a>
+                <a href="{% url 'page3' %}" class="nav-item">Сторінка 3</a>
+            </nav>
+        </header>
+
+        <main class="content-area">
+            <article class="content-card">
+                {% block content %}
+                <!-- Dynamic Payload -->
+                {% endblock %}
+            </article>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
