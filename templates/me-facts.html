@@ -1,0 +1,58 @@
+{% extends 'about-me.html' %}
+
+{% block title %}Цікаві факти про мене{% endblock %}
+
+{% block me_content %}
+<div class="subpage-body">
+    <!-- Subsection Intro Header -->
+    <div class="subpage-header framed-box">
+        <div class="subpage-header-text">
+            <span class="subpage-tag">Підрозділ: Особисті факти</span>
+            <h2 class="subpage-title">Кілька цікавих деталей</h2>
+        </div>
+        <div class="subpage-counter">
+            <span class="counter-number">03</span>
+            <span class="counter-label">Факти</span>
+        </div>
+    </div>
+
+    <!-- Facts Grid -->
+    <div class="facts-grid">
+        <!-- Fact 1 -->
+        <article class="framed-box fact-card double-border">
+            <div class="fact-top">
+                <span class="fact-number">01</span>
+            </div>
+            <h3 class="fact-title">Соціальні мережі...</h3>
+            <p class="fact-text">
+                ...А точніше майже їх відсутність, бо користуюся рідко. Несподівано для підлітка?
+            </p>
+        </article>
+
+        <!-- Fact 2 -->
+        <article class="framed-box fact-card double-border">
+            <div class="fact-top">
+                <span class="fact-number">02</span>
+            </div>
+            <h3 class="fact-title">Web-проєкти ззовні академії</h3>
+            <p class="fact-text">
+                Сам розробляю щось не дуже часто, проте вже півтора місяці працюю над проєктом "Синапс": `https://github.com/kasatjk/synapse`
+            </p>
+            <div class="fact-footer">
+                <span class="badge-subtle">Тег: Мотивація</span>
+            </div>
+        </article>
+
+        <!-- Fact 3 -->
+        <article class="framed-box fact-card double-border">
+            <div class="fact-top">
+                <span class="fact-number">03</span>
+            </div>
+            <h3 class="fact-title">Яка музика грає під час роботи?</h3>
+            <p class="fact-text">
+                Пташки за вікном, вітер, автівки, а іноді тривога :_)
+            </p>
+        </article>
+    </div>
+</div>
+{% endblock me_content %}

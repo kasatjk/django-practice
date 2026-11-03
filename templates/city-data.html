@@ -1,0 +1,113 @@
+{% extends 'about-city.html' %}
+
+{% block title %}Одеса — Дані та статистика{% endblock %}
+
+{% block city_content %}
+<div class="subpage-body">
+    <!-- Subsection Intro Header -->
+    <div class="subpage-header framed-box">
+        <div class="subpage-header-text">
+            <span class="subpage-tag">Підрозділ: Статистика & Дані</span>
+            <h2 class="subpage-title">Ключові цифри та довідкові показники</h2>
+            <p class="subpage-desc">
+                Числові характеристики міста Одеси — від географічних координат до 
+                інфраструктурних та демографічних даних.
+            </p>
+        </div>
+        <div class="subpage-counter">
+            <span class="counter-number">4+</span>
+            <span class="counter-label">Категорії даних</span>
+        </div>
+    </div>
+
+    <!-- Stat Metrics Row -->
+    <div class="metrics-grid">
+        <div class="framed-box metric-card double-border">
+            <span class="metric-label">Рік заснування</span>
+            <div class="metric-value">1794 <span class="metric-unit">р.</span></div>
+        </div>
+
+        <div class="framed-box metric-card double-border">
+            <span class="metric-label">Орієнтовне населення</span>
+            <div class="metric-value">~1.01 <span class="metric-unit">млн</span></div>
+        </div>
+
+        <div class="framed-box metric-card double-border">
+            <span class="metric-label">Загальна площа</span>
+            <div class="metric-value">162.4 <span class="metric-unit">км²</span></div>
+        </div>
+
+        <div class="framed-box metric-card double-border">
+            <span class="metric-label">Довжина катакомб</span>
+            <div class="metric-value">2500+ <span class="metric-unit">км</span></div>
+        </div>
+    </div>
+
+    <!-- Data Sections Grid -->
+    <div class="data-panels-grid">
+        <!-- Panel 1: Географія та Клімат -->
+        <div class="framed-box data-panel double-border">
+            <div class="panel-header">
+                <span class="panel-icon">🌐</span>
+                <h3 class="panel-title">Географія та клімат</h3>
+            </div>
+            <table class="data-table">
+                <tbody>
+                    <tr>
+                        <td class="table-key">Координати:</td>
+                        <td class="table-val">46°28′39″ пн. ш., 30°43′57″ сх. д.</td>
+                    </tr>
+                    <tr>
+                        <td class="table-key">Рельєф:</td>
+                        <td class="table-val">Приморська терасована височина, 40-50 м над морем</td>
+                    </tr>
+                    <tr>
+                        <td class="table-key">Клімат:</td>
+                        <td class="table-val">Помірно-морський з м'якою зимою та теплим літом</td>
+                    </tr>
+                    <tr>
+                        <td class="table-key">Середня температура липня:</td>
+                        <td class="table-val">+23.5 °C (здається, вже +40...)</td>
+                    </tr>
+                    <tr>
+                        <td class="table-key">Середня температура січня:</td>
+                        <td class="table-val">Placeholder: -0.5 °C</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Panel 2: Інфраструктура та Адміністративний поділ -->
+        <div class="framed-box data-panel double-border">
+            <div class="panel-header">
+                <span class="panel-icon">🏗️</span>
+                <h3 class="panel-title">Адміністрація та логістика</h3>
+            </div>
+            <table class="data-table">
+                <tbody>
+                    <tr>
+                        <td class="table-key">Райони міста:</td>
+                        <td class="table-val">Приморський, Київський, Хаджибейський, Пересипський</td>
+                    </tr>
+                    <tr>
+                        <td class="table-key">Морський порт:</td>
+                        <td class="table-val">один з найбільших у басейні Чорного моря</td>
+                    </tr>
+                    <tr>
+                        <td class="table-key">Транспорт:</td>
+                        <td class="table-val">Трамвай, тролейбус, маршрутки, залізничний вокзал, фунікулер</td>
+                    </tr>
+                    <tr>
+                        <td class="table-key">Університети:</td>
+                        <td class="table-val">ОНУ ім. Мечникова, ОНМУ, Політехніка та інші</td>
+                    </tr>
+                    <tr>
+                        <td class="table-key">Поштовий індекс:</td>
+                        <td class="table-val">65000 — 65480</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock city_content %}

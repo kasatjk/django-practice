@@ -1,0 +1,38 @@
+{% extends 'shell.html' %}
+
+{% block title %}Про Одесу — Морська перлина{% endblock %}
+
+{% block content %}
+<div class="section-wrapper">
+    <!-- Header banner for the City Section -->
+    <header class="section-hero framed-box double-border">
+        <div class="section-badge-wrap">
+            <span class="framed-badge">Міський розділ</span>
+            <span class="badge-subtle">Південна пальміра</span>
+        </div>
+        <h1 class="section-title">Одеса — <span class="text-teal">перлина Чорного моря</span></h1>
+        <p class="section-lead">
+            Тот город, который я вижу во сне...
+        </p>
+
+        <!-- Sub-navigation for City Section -->
+        <nav class="sub-nav framed-subnav">
+            <a href="{% url 'about-city' %}" class="sub-nav-item {% if request.resolver_match.url_name == 'about-city' %}active{% endif %}">
+                <span class="nav-icon">⚓</span> Вступ
+            </a>
+            <a href="{% url 'city-facts' %}" class="sub-nav-item {% if request.resolver_match.url_name == 'city-facts' %}active{% endif %}">
+                <span class="nav-icon">💡</span> Цікаві факти
+            </a>
+            <a href="{% url 'city-data' %}" class="sub-nav-item {% if request.resolver_match.url_name == 'city-data' %}active{% endif %}">
+                <span class="nav-icon">📊</span> Дані та статистика
+            </a>
+        </nav>
+    </header>
+
+    <!-- Subpage Content Block -->
+    <div class="subpage-content-wrapper">
+        {% block city_content %}
+        {% endblock city_content %}
+    </div>
+</div>
+{% endblock %}

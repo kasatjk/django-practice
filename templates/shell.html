@@ -4,36 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}System Core{% endblock %}</title>
+    <title>{% block title %}Портфоліо & Місто Одеса{% endblock %}</title>
     
-    <!-- Modern sans-serif stack -->
+    <!-- Modern Google Fonts: Inter & Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <!-- External Stylesheet -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% block extra_head %}{% endblock %}
 </head>
 <body>
+    <div class="site-glow-top"></div>
     <div class="layout-wrapper">
+        <!-- Top Navigation Bar -->
         <header class="top-nav">
-            <nav class="nav-links">
-                <a href="{% url 'page1' %}" class="nav-item">Сторінка 1 - Поточний час</a>
-                <a href="{% url 'page2' %}" class="nav-item">Сторінка 2 - Дата</a>
-                <a href="{% url 'page3' %}" class="nav-item">Сторінка 3</a>
-            </nav>
+            <div class="nav-container">
+                <a href="{% url 'home' %}" class="brand-logo">
+                    <span class="logo-symbol">✦</span>
+                    <span class="logo-text">Core<span class="highlight">Project</span></span>
+                </a>
+
+                <nav class="nav-links">
+                    <a href="{% url 'home' %}" class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+                        Головна
+                    </a>
+                    <a href="{% url 'about-me' %}" class="nav-item {% if 'me' in request.resolver_match.url_name %}active{% endif %}">
+                        Про мене
+                    </a>
+                    <a href="{% url 'about-city' %}" class="nav-item {% if 'city' in request.resolver_match.url_name %}active{% endif %}">
+                        Про Одесу
+                    </a>
+                </nav>
+
+                <div class="nav-meta">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">Онлайн</span>
+                </div>
+            </div>
         </header>
 
+        <!-- Main Content Area -->
         <main class="content-area">
-            <article class="content-card">
-                {% block content %}
-                <!-- Dynamic Payload -->
-                {% endblock %}
-            </article>
+            {% block content %}
+            <!-- Default Home Welcome View -->
+            <section class="hero-card framed-box double-border">
+                <div class="hero-badge-wrap">
+                    <span class="framed-badge">Головний портал</span>
+                    <span class="badge-subtle">Django 6 Framework</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Ласкаво просимо до нашого <span class="text-teal">веб-простору</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Це головна точка входу. Тут представлено два великі ключові розділи: 
+                    <strong>«Про мене»</strong> (персональна біографія та факти) та 
+                    <strong>«Про Одесу»</strong> (історія, статистика та цікавинки міста біля моря).
+                </p>
+
+                <!-- Navigation Portal Cards -->
+                <div class="portal-grid">
+                    <div class="portal-card framed-box">
+                        <div class="portal-card-badge">Розділ I</div>
+                        <h2 class="portal-card-title">Про мене</h2>
+                        <ul class="sublink-list">
+                            <li><a href="{% url 'about-me' %}">Головна картка про мене &rarr;</a></li>
+                            <li><a href="{% url 'me-bio' %}">Життєпис та біографія &rarr;</a></li>
+                            <li><a href="{% url 'me-facts' %}">Цікаві особисті факти &rarr;</a></li>
+                        </ul>
+                        <a href="{% url 'about-me' %}" class="btn btn-teal">Перейти до розділу</a>
+                    </div>
+
+                    <div class="portal-card framed-box">
+                        <div class="portal-card-badge">Розділ II</div>
+                        <h2 class="portal-card-title">Про Одесу</h2>
+                        <ul class="sublink-list">
+                            <li><a href="{% url 'about-city' %}">Огляд Одеси &rarr;</a></li>
+                            <li><a href="{% url 'city-facts' %}">Дивовижні факти про місто &rarr;</a></li>
+                            <li><a href="{% url 'city-data' %}">Статистика, цифри та дані &rarr;</a></li>
+                        </ul>
+                        <a href="{% url 'about-city' %}" class="btn btn-teal">Перейти до розділу</a>
+                    </div>
+                </div>
+            </section>
+            {% endblock %}
         </main>
 
+        <!-- Site Footer -->
         <footer class="site-footer">
-            <p>&copy; 2026</p>
+            <div class="footer-container">
+                <div class="footer-col">
+                    <span class="footer-brand">✦ Core<span class="highlight">Project</span></span>
+                </div>
+                <div class="footer-nav">
+                    <a href="{% url 'home' %}">Головна</a>
+                    <a href="{% url 'about-me' %}">Про мене</a>
+                    <a href="{% url 'about-city' %}">Про Одесу</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Django Practice System. Усі права захищено.</p>
+                </div>
+            </div>
         </footer>
     </div>
 </body>

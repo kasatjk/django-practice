@@ -1,0 +1,39 @@
+{% extends 'shell.html' %}
+
+{% block title %}Про мене — Персональна візитівка{% endblock %}
+
+{% block content %}
+<div class="section-wrapper">
+    <!-- Header banner for the About Me Section -->
+    <header class="section-hero framed-box double-border profile-hero">
+        <div class="profile-hero-layout">
+            <div class="profile-hero-info">
+                <div class="section-badge-wrap">
+                    <span class="framed-badge">Особистий профіль</span>
+                    <span class="badge-subtle">Веб-розробник / Студент / Просто людина]</span>
+                </div>
+                <h1 class="section-title">Привіт, я — <span class="text-teal">Данило</span></h1>
+            </div>
+        </div>
+
+        <!-- Sub-navigation for Me Section -->
+        <nav class="sub-nav framed-subnav">
+            <a href="{% url 'about-me' %}" class="sub-nav-item {% if request.resolver_match.url_name == 'about-me' %}active{% endif %}">
+                <span class="nav-icon">👤</span> Вступ
+            </a>
+            <a href="{% url 'me-bio' %}" class="sub-nav-item {% if request.resolver_match.url_name == 'me-bio' %}active{% endif %}">
+                <span class="nav-icon">📜</span> Біографія
+            </a>
+            <a href="{% url 'me-facts' %}" class="sub-nav-item {% if request.resolver_match.url_name == 'me-facts' %}active{% endif %}">
+                <span class="nav-icon">✨</span> Факти про мене
+            </a>
+        </nav>
+    </header>
+
+    <!-- Subpage Content Block -->
+    <div class="subpage-content-wrapper">
+        {% block me_content %}
+        {% endblock me_content %}
+    </div>
+</div>
+{% endblock %}
